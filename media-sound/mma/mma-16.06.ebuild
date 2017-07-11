@@ -72,7 +72,8 @@ src_install() {
 		mkdir -p ${D}/usr/local/share/mma || die
 		mkdir -p ${D}/usr/local/bin || die
 		cp -r * ${D}/usr/local/share/mma
-		ln -s  ${D}/usr/local/share/mma/mma.py ${D}/usr/local/bin/mma
+		ln -s  ${D}usr/local/share/mma/mma.py ${D}/usr/local/bin/mma
+		#dosym  ${D}/usr/local/share/mma/mma.py ${D}/usr/local/bin/mma
 		#distutils-r1_src_install
 	#fi
 	elog "docs install"
