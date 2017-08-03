@@ -7,7 +7,7 @@ DESCRIPTION="Reaper DAW by Cockos"
 HOMEPAGE="reaper.fm"
 
 inherit versionator
-MY_PN="Foo"
+MY_PN="reaper"
 MY_PV=$(replace_version_separator 2 '')
 MY_P="${MY_PN}_${MY_PV}"
 

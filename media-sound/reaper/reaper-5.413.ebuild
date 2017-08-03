@@ -11,8 +11,10 @@ MY_PN="Foo"
 MY_PV=$(replace_version_separator 2 '')
 MY_P="${MY_PN}_${MY_PV}"
 
+MY_P="reaper_5413"
+
 SRC_URI="
-	amd64? ( http://www.landoleet.org/dev/${MY_P}_developer_linux_x86_64.tar.xz -> reaper_linux_x86_64.tar.xz ) "
+	amd64? ( http://landoleet.org/dev/old/${MY_P}_developer_linux_x86_64.tar.xz -> reaper_linux_x86_64.tar.xz ) "
 	
 #	arm? ( http://www.landoleet.org/dev/${PN}_${PV}_developer_linux_armv7l.tar.xz -> reaper.tar.xz )
 
