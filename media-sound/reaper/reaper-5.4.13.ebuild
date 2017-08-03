@@ -50,7 +50,7 @@ src_install() {
 	mv "${S}/REAPER/libSwell.so" "${S}/REAPER/__libSwell.so"
     cp -r "${S}/REAPER/"* "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
 	dosym "/usr/local/lib/reaper-${PV}" "/usr/local/lib/reaper"
-	dosym "/usr/local/lib/libSwell.so " "/usr/local/lib/reaper-${PV}/libSwell.so"
+	dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
 
 	dodoc readme-linux.txt REAPER/license.txt 
 	einfo < readme-linux.txt
