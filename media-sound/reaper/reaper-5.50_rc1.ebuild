@@ -8,7 +8,8 @@ HOMEPAGE="reaper.fm"
 
 inherit versionator
 MY_PN="reaper"
-MY_PV=$(replace_version_separator 2 '')
+#MY_PV=$(replace_version_separator 2 '')
+MY_PV=$(replace_all_version_separators '')
 MY_P="${MY_PN}_${MY_PV}"
 
 #MY_P="reaper_550rc1"
