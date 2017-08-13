@@ -11,11 +11,12 @@ MY_PN="reaper"
 MY_PV=$(replace_version_separator 2 '')
 MY_P="${MY_PN}_${MY_PV}"
 
-MY_P="reaper_550rc1"
+#MY_P="reaper_550rc1"
 
 SRC_URI="
-	amd64? ( http://landoleet.org/dev/old/${MY_P}_developer_linux_x86_64.tar.xz -> reaper_linux_x86_64.tar.xz ) "
-	
+	amd64? ( https://landoleet.org/dev/old/${MY_P}_developer_linux_x86_64.tar.xz -> reaper_linux_x86_64.tar.xz ) "
+#	amd64? ( https://landoleet.org/dev/old/reaper_550rc1_developer_linux_x86_64.tar.xz -> reaper_linux_x86_64.tar.xz ) "
+#                https://landoleet.org/dev/old/reaper_550rc1_developer_linux_x86_64.tar.xz	
 #	arm? ( http://www.landoleet.org/dev/${PN}_${PV}_developer_linux_armv7l.tar.xz -> reaper.tar.xz )
 
 
@@ -52,6 +53,9 @@ src_install() {
 	mv "${S}/REAPER/libSwell.so" "${S}/REAPER/__libSwell.so"
 	doexe REAPER/reaper5
 	doexe REAPER/reamote-server
+	cp  "${S}/REAPER/license.txt" "${D}usr/local/lib/reaper-${PV}/"
+	cp  "${S}/REAPER/tips.txt" "${D}usr/local/lib/reaper-${PV}/"
+	cp  "${S}/REAPER/whatsnew.txt" "${D}usr/local/lib/reaper-${PV}/"
 	insinto "/usr/local/lib/reaper-${PV}"
     #doins -r "${S}/REAPER/"* "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
     #doexe  "${S}/REAPER/"*  || die "Install failed!"
