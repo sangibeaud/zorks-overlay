@@ -27,7 +27,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	media-libs/libSwell
+	media-libs/libswell
 	"
 src_unpack() {
     if [ "${A}" != "" ]; then
