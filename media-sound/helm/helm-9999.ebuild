@@ -6,9 +6,8 @@ inherit eutils
 
 DESCRIPTION="Open source polyphonic software synthesizer with lots of modulation"
 HOMEPAGE="http://tytel.org/helm/"
-#SRC_URI="https://github.com/mtytel/helm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/mtytel/helm.git"
-#EGIT_TAG="0.5.0"
+EGIT_TAG="0.5.0"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -24,10 +23,15 @@ RDEPEND="media-libs/alsa-lib
 	x11-libs/libXcursor
 	x11-libs/libXext
 	x11-libs/libXinerama
-	x11-libs/libXrandr"
+	x11-libs/libXrandr
+	"
 DEPEND="${RDEPEND}"
 
-DOCS="README.md"
+
+src_fetch() {
+	git-r3_fetch
+}
+
 
 #src_prepare() {
 #	epatch "${FILESDIR}"/${P}-gcc6.patch
@@ -36,9 +40,10 @@ DOCS="README.md"
 #	epatch_user
 #}
 
-#src_compile() {
+src_compile() {
 #	emake PREFIX=/usr all
-#}
+	make 
+}
 
 #src_install() {
 #	default
