@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/grame-cncm/faust.git"
 
 LICENSE="iGPL"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""
