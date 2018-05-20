@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="net-libs/libmicrohttpd"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -25,5 +25,9 @@ src_prepare() {
 	eapply_user
 }
 
+src_compile() {
+	emake light
+	emake all
+}
 
 
