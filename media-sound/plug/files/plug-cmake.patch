@@ -1,0 +1,26 @@
+diff --git a/cmake/Install.cmake b/cmake/Install.cmake
+index a77cda9..f2389fb 100644
+--- a/cmake/Install.cmake
++++ b/cmake/Install.cmake
+@@ -1,5 +1,9 @@
+ 
+-install(FILES 50-mustang.rules
+-        DESTINATION /lib/udev/rules.d
++set(PLUG_UDEV_RULE_PATH "/lib/udev/rules.d" CACHE PATH "Udev rules directory.")
++
++install(FILES ${CMAKE_SOURCE_DIR}/cmake/50-mustang.rules
++        DESTINATION ${PLUG_UDEV_RULE_PATH}
+         )
+ 
++install(EXPORT plug-config DESTINATION share/plug/cmake)
++
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 10604a2..0ecdd8e 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -27,3 +27,5 @@ target_link_libraries(plug
+                             libusb
+                         )
+ 
++install(TARGETS plug EXPORT plug-config DESTINATION bin)
++

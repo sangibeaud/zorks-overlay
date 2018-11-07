@@ -1,0 +1,10 @@
+--- ./offa-plug/CMakeLists.txt	2018-11-07 19:47:17.000000000 +0100
++++ ./offa-patch/CMakeLists.txt	2018-11-07 19:30:41.000000000 +0100
+@@ -46,7 +46,6 @@
+ add_compile_options(-Wall
+                     -Wextra
+                     -pedantic
+-                    -Werror
+                     -Wshadow
+                     -Wold-style-cast
+                     )
