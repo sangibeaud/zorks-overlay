@@ -1,0 +1,13 @@
+diff --git a/architecture/faust/midi/jack-midi.h b/architecture/faust/midi/jack-midi.h
+index 86daf8900..415163ad0 100644
+--- a/architecture/faust/midi/jack-midi.h
++++ b/architecture/faust/midi/jack-midi.h
+@@ -83,7 +83,7 @@ class jack_midi_handler : public midi_handler {
+             // MIDI output
+             unsigned char* port_buf_out = (unsigned char*)port_buf_out_aux;
+             if (reset) {
+-                jack_midi_reset_buffer(port_buf_out);
++                jack_midi_clear_buffer(port_buf_out);
+             } else {
+                 jack_midi_clear_buffer(port_buf_out);
+             }
