@@ -3,7 +3,7 @@
 
 EAPI=6
 
-DESCRIPTION="NNLS Chroma analyses a single channel of audio using frame-wise spectral input from the Vamp host"
+DESCRIPTION="Analyses a single channel of audio input ofthe Vamp host"
 HOMEPAGE="http://www.isophonics.net/nnls-chroma"
 SRC_URI="https://code.soundsoftware.ac.uk/attachments/download/1691/nnls-chroma-1.1.tar.gz"
 
@@ -22,6 +22,18 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	emake -f Makefile.linux
+	emake -f Makefile.linux Chordino
+	emake -f Makefile.linux Tuning
 
 	}
+
+src_install() {
+	dodoc CITATION COPYING README releasenotes-*.txt
+
+	insinto /usr/lib64/vamp
+	doins nnls-chroma.cat
+	doins nnls-chroma.n3
+	doins nnls-chroma.so
+	fperms 0755 /usr/lib64/vamp/nnls-chroma.so
+}
 
