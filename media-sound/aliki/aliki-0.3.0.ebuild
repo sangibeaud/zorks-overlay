@@ -14,10 +14,10 @@ IUSE=""
 
 DEPEND="
 	>=media-libs/zita-alsa-pcmi-0.2.0
-	>=dev-lib/libclthreads-2.4
+	>=media-libs/libclthreads-2.4
 	>=media-libs/libclxclient-3.9
 	media-libs/libsndfile
-	media-libs/alsa-libs
+	media-libs/alsa-lib
 	media-sound/jack-audio-connection-kit
 	"
 RDEPEND="${DEPEND}"
