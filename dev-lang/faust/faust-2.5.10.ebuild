@@ -9,11 +9,12 @@ DESCRIPTION="Faust programming language"
 HOMEPAGE="https://github.com/grame-cncm/faust"
 #SRC_URI="https://github.com/grame-cncm/faust.git"
 EGIT_REPO_URI="https://github.com/grame-cncm/faust.git"
+EGIT_COMMIT="v2-5-10"
 
 LICENSE="iGPL"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="remote +minimal"
+KEYWORDS="amd64"
+IUSE="remote"
 
 DEPEND="net-libs/libmicrohttpd"
 RDEPEND="${DEPEND}"
@@ -51,13 +52,10 @@ src_compile() {
 	#emake compiler
 	#emake all
 	if use remote; then
-		emake DESTDIR=${D} remote
+		PREFIX=/usr emake httpd
+		PREFIX=/usr emake 
 	else
-		if use minimal; then 
-			emake DESTDIR=${D} compiler
-		else
-			emake DESTDIR=${D} all
-		fi
+		PREFIX=/usr emake light
 	fi
 }
 
