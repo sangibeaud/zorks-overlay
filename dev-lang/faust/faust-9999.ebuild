@@ -35,6 +35,7 @@ src_prepare() {
 		#else
 		#	echo "... and it isn't"
 		#fi
+		patch --verbose -p1 < "$FILESDIR"/faust-memcpy.patch
 	fi
 
 }
@@ -43,19 +44,22 @@ remote_prepare() {
 	echo old school prepare with sed
 	jackd --version | grep -q "0.125"  && \
 		sed  -i "s/jack_midi_reset_buffer/jack_midi_clear_buffer/" ${S}/architecture/faust/midi/jack-midi.h
+	epatch --verbose "$FILESDIR"/faust-memcpy.patch
 }
 
 src_compile() {
-	emake compiler
+	#emake compiler
 	#emake all
 	if use remote; then
 		emake remote
+	else
+		emake compiler
 	fi
 }
 
 
 src_install() {
-	emake DESTDIR="${D}" install
+	PREFIX=/usr emake DESTDIR="${D}" install
 
 }
 
