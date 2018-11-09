@@ -1,0 +1,24 @@
+diff --git a/architecture/faust/midi/jack-midi.h b/architecture/faust/midi/jack-midi.h
+index 86daf8900..b06489984 100644
+--- a/architecture/faust/midi/jack-midi.h
++++ b/architecture/faust/midi/jack-midi.h
+@@ -26,6 +26,7 @@
+ 
+ #include <iostream>
+ #include <cstdlib>
++#include <cstring>
+ 
+ #include <jack/midiport.h>
+ #include "faust/midi/midi.h"
+diff --git a/architecture/faust/midi/midi.h b/architecture/faust/midi/midi.h
+index a88e0a1ce..79fd75934 100644
+--- a/architecture/faust/midi/midi.h
++++ b/architecture/faust/midi/midi.h
+@@ -26,6 +26,7 @@
+ 
+ #include <vector>
+ #include <string>
++#include <cstring>
+ #include <algorithm>
+ #include <assert.h>
+ 
