@@ -41,7 +41,7 @@ DOCS=( OSC README )
 src_prepare() {
 #	epatch "${FILESDIR}"/${P}-libsigc26.patch
 #	epatch "${FILESDIR}"/${P}-libsigc26.patch
-#	epatch "${FILESDIR}"/${P}-wx3.0.patch
+	epatch "${FILESDIR}"/${P}-wx3.0.patch
 
 #	cp -rf "${WORKDIR}"/aclocal "${S}" || die "copying aclocal failed"
 	cp -rf "/usr/share/aclocal" "${S}" || die "copying aclocal failed"

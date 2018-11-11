@@ -11,11 +11,12 @@ HOMEPAGE="http://essej.net/sooperlooper/index.html"
 #SRC_URI="http://essej.net/sooperlooper/${P/_p/-}.tar.gz
 #	mirror://gentoo/${PN}-1.6.5-m4.tar.bz2"
 EGIT_REPO_URI="https://github.com/essej/sooperlooper.git"
+EGIT_COMMIT="f00442b"
 
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc ~x86"
 IUSE="wxwidgets"
 
 RDEPEND="
