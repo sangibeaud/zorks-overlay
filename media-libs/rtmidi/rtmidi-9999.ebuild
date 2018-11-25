@@ -12,14 +12,14 @@ EGIT_REPO_URI="https://github.com/thestk/rtmidi.git"
 
 LICENSE="MIT-with-advertising"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="+alsa doc +jack"
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	jack? ( media-sound/jack-audio-connection-kit )"
 
 DEPEND="${RDEPEND}"
 
-src_prepare() {
+my_src_prepare() {
 #	epatch "${FILESDIR}/${P}_buildsystem.patch"
 	eautoreconf
 #	eapply_user
