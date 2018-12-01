@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~mips ~sparc ~x86"
 
 
-DEPEND="media-sound/jack-audio-connection-kit 
+DEPEND="virtual/jack \
 	sys-libs/ncurses 
 	>=media-libs/libsndfile-1.0.0 
 	>=dev-libs/libconfig-1.3.2

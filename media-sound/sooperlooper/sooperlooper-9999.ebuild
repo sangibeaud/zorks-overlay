@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="wxwidgets"
 
 RDEPEND="
-	media-sound/jack-audio-connection-kit
+	virtual/jack
 	>=media-libs/liblo-0.10
 	>=dev-libs/libsigc++-2.2.10:2
 	>=media-libs/libsndfile-1.0.2

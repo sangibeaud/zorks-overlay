@@ -17,7 +17,7 @@ IUSE="jack lash"
 RDEPEND="media-libs/alsa-lib
 	>=dev-cpp/gtkmm-2.4:2.4
 	>=dev-libs/libsigc++-2.2:2
-	jack? ( >=media-sound/jack-audio-connection-kit-0.90 )
+	jack? ( virtual/jack )
 	lash? ( >=media-sound/lash-0.5 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"

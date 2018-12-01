@@ -18,7 +18,7 @@ DEPEND="
 	>=media-libs/libclxclient-3.9
 	media-libs/libsndfile
 	media-libs/alsa-lib
-	media-sound/jack-audio-connection-kit
+	virtual/jack
 	"
 RDEPEND="${DEPEND}"
 BDEPEND=""

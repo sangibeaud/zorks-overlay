@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~mips ~sparc ~x86"
 
 
-DEPEND="media-libs/libsmf media-sound/jack-audio-connection-kit media-sound/mma"
+DEPEND="media-libs/libsmf virtual/jack  media-sound/mma"
 RDEPEND="${DEPEND} dev-python/pygtk dev-python/pygtksourceview "
 
 #src_configure() {
