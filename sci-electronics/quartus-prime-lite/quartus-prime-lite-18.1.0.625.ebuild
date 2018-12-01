@@ -20,8 +20,7 @@ DEPEND=" \
 	media-libs/fontconfig \
 	media-libs/freetype \
 	media-libs/libcanberra \
-	media-libs/libpng \
-	media-libs/libpng12 \
+	>=media-libs/libpng-1.2 \
 	x11-libs/libICE \
 	x11-libs/libSM \
 	sys-apps/util-linux \
