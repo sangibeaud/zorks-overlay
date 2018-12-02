@@ -7,8 +7,8 @@ inherit eutils
 
 DESCRIPTION="Full-featured EDA product for altera devices"
 HOMEPAGE="https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html"
-SRC_URI="Quartus-lite-${PV}-linux.tar
-	https://github.com/brendanhoran/gentoo-custom/raw/master/files/libfreetype.so.6"
+SRC_URI="Quartus-lite-${PV}-linux.tar"
+iNO_URI="	https://github.com/brendanhoran/gentoo-custom/raw/master/files/libfreetype.so.6"
 # variable to store the download URLS
 DOWNLOADPAGE="http://dl.altera.com/?edition=lite"
 DOWNLOADFT="https://raw.githubusercontent.com/brendanhoran/gentoo-custom/master/files/libfreetype.so.6"
@@ -36,7 +36,7 @@ pkg_nofetch() {
 	elog "For Quartus :"
 	elog "Please navigate to ${DOWNLOADPAGE}"
 	elog "Sign in with your Altera account (you need to register)"
-	elog "Download Quartus-lite-${PV}-linux.tar  and place it into ${DISTDIR}"
+	elog "Download Quartus-lite-${PV}-linux.tar  and place it into \${DISTDIR}"
 	elog "-------------------------------------------------------"
 	elog "For Freetype libary :"
 	elog "Please download the following file :"

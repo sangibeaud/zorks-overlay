@@ -15,8 +15,8 @@ LICENSE="Quartus-prime-megacore"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=" \
-	dev-libs/expat \
+RDEPEND=" ${DEPEND} \
+	dev-libs/expat[abi_x86_32] \
 	media-libs/fontconfig \
 	media-libs/freetype \
 	media-libs/libcanberra \
