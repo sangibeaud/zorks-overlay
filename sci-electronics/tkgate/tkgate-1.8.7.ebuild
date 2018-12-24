@@ -10,7 +10,7 @@ inherit autotools autotools-utils distutils-r1 multilib
 
 DESCRIPTION="Tk gate logici circuit design"
 HOMEPAGE="http://www.tkgate.org/"
-SRC_URI="http://www.tkgate.org/downloads/${PN}-${PV}.tgz"
+#SRC_URI="http://www.tkgate.org/downloads/${PN}-${PV}.tgz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
