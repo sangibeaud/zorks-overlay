@@ -75,6 +75,16 @@ src_install() {
 
 	#
 	einfo < readme-linux.txt
+	echo "[Desktop Entry]
+Name=Reaper
+Exec=reaper
+Icon=reaper
+Type=Application
+Categories=AudioVideo;Audio" >> ${S}/reaper.desktop
+	mkdir -p ${D}usr/share/applications/
+	cp ${S}/reaper.desktop "${D}usr/share/applications/" || die "Install failed!"
+
+	
 }
 
 
