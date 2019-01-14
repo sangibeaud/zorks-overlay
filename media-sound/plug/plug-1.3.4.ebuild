@@ -9,7 +9,7 @@ inherit git-r3 cmake-utils
 DESCRIPTION="Software for Fender Mustang Amps. This is a fork of piorekf's Plug."
 HOMEPAGE="https://github.com/offa/plug"
 EGIT_REPO_URI="https://github.com/offa/plug"
-EGIT_COMMIT="tags/v1.3.2"
+EGIT_COMMIT="tags/v1.3.4"
 
 LICENSE="GPL3"
 SLOT="0"
@@ -29,6 +29,8 @@ BDEPEND=""
 src_prepare() {
 	cd ${S}
 	epatch "${FILESDIR}/${PN}-Werror.patch"
+	sed -i "s/\/lib\/udev\/rules.d/\/etc\/udev\/rules.d/" cmake/Install.cmake
+	sed -i "s/\/lib\/share\/applications/\/usr\/share\/applications/" cmake/Install.cmake
 	#epatch "${FILESDIR}/${PN}-cmake.patch"
 }
 

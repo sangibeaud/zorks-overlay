@@ -29,7 +29,7 @@ BDEPEND=""
 src_prepare() {
 	cd ${S}
 	epatch "${FILESDIR}/${PN}-Werror.patch"
-	epatch "${FILESDIR}/${PN}-cmake.patch"
+	#epatch "${FILESDIR}/${PN}-cmake.patch"
 }
 
 src_configure() {
