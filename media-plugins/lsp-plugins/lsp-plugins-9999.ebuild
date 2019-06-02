@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/sadko4u/lsp-plugins.git"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="jack ladspa lv2 vst -doc"
 
 DEPEND="
 	x11-libs/cairo
@@ -32,7 +32,25 @@ src_prepare() {
 }
 
 src_compile() {
-	BUILD_PROFILE=x86_64 CC_FLAGS=-DLSP_NO_EXPERIMENTAL emake all
+	local modules=""
+
+	if use doc; then
+		modules="${modules} doc"
+	fi
+	#if use notavaliduseflag; then
+	#	modules="${modules} jack"
+	#fi
+	if use lv2; then
+		modules="${modules} lv2"
+	fi
+	if use ladspa; then
+		modules="${modules} ladspa"
+	fi
+	if use vst; then
+		modules="${modules} vst"
+	fi
+	echo "Building Modules .... ${modules}."
+	BUILD_PROFILE=x86_64 CC_FLAGS=-DLSP_NO_EXPERIMENTAL emake "BUILD_MODULES=\'${modules}\'" all
 }
 
 src_install() {
