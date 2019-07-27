@@ -64,7 +64,7 @@ src_install() {
 
 	elog "Running src_install"
 	#if use python ; then
-	elog "Ppython install"
+	elog "Python install"
 		#cd "${S}"/../python || die
 		cd "${S}" || die
 		#echo "" | python ./cp-install
