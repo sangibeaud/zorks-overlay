@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>stephane.angibeaud@gmail.com</email>
+		<name>SanjiBo over original author Simon van der Veldt</name>
+	</maintainer>
+	<use>
+		<flag name="a2jmidid">Enable a2jmidid integration</flag>
+		<flag name="ladish">Enable installation of Claudia, a LADISH front-end</flag>
+	</use>
+</pkgmetadata>
