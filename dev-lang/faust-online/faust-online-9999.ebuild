@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/grame-cncm/onlinecompiler.git"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~*"
 IUSE=""
 
 DEPEND="dev-lang/php
