@@ -13,15 +13,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+alsa doc +jack"
 RDEPEND="alsa? ( media-libs/alsa-lib )
-	jack? ( media-sound/jack-audio-connection-kit )"
+	jack? ( virtual/jack )"
+#jack? ( media-sound/jack-audio-connection-kit )"
 
 DEPEND="${RDEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}_buildsystem.patch"
-	eautoreconf
-	eapply_user
-}
+#src_prepare() {
+#	epatch "${FILESDIR}/${P}_buildsystem.patch"
+#	eautoreconf
+#	eapply_user
+#}
 
 src_configure() {
 	econf $(use_with alsa) \
