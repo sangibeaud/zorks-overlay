@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=" examples vst2"
 
-DEPEND="x11-libs/cairo[xcb]"
+DEPEND=" examples? ( x11-libs/cairo[xcb] )"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
