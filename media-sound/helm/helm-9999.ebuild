@@ -28,9 +28,10 @@ RDEPEND="media-libs/alsa-lib
 DEPEND="${RDEPEND}"
 
 
-#src_fetch() {
+src_fetch() {
 #	git-r3_fetch
-#}
+	egit submodule update
+}
 
 
 #src_prepare() {
