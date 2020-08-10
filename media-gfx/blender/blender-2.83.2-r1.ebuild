@@ -40,6 +40,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}
 RDEPEND="${PYTHON_DEPS}
 	>=dev-libs/boost-1.62:=[nls?,threads(+)]
 	dev-libs/lzo:2
+	dev-cpp/tbb
 	>=dev-python/numpy-1.10.1
 	dev-python/requests
 	media-libs/freetype
@@ -81,7 +82,6 @@ RDEPEND="${PYTHON_DEPS}
 	opensubdiv? ( >=media-libs/opensubdiv-3.3.0:=[cuda=,opencl=] )
 	openvdb? (
 		media-gfx/openvdb[-abi3-compat(-),abi4-compat(+)]
-		dev-cpp/tbb
 		>=dev-libs/c-blosc-1.5.2
 	)
 	osl? ( media-libs/osl:= )

@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-qt/qtmultimedia[widgets]"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
