@@ -65,7 +65,7 @@ src_install() {
 	dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
 
 	#All the documentation
-	dodoc readme-linux.txt REAPER/license.txt REAPER/whatsnew.txt
+	dodoc readme-linux.txt REAPER/whatsnew.txt
 	# dodoc REAPER/tips.txt 
 	#"Docs/REAPER Quick Start.pdf" 
 	
