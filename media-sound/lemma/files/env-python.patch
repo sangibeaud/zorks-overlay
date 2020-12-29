@@ -1,0 +1,8 @@
+--- /var/tmp/portage/media-sound/lemma-0.9-r1/work/lemma.py	2010-08-22 19:41:32.000000000 +0200
++++ ./lemma.py	2020-12-23 12:13:31.386128217 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ """
+ LeMMA - a GUI frontend for creating MMA files

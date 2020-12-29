@@ -38,6 +38,8 @@ AUTOTOOLS_IN_SOURCE_BUILD=0
 
 src_prepare() {
 	elog "Running src_prepare"
+	epatch ${FILESDIR}/env-python.patch
+	#eapply_user
 
 	#cd .. || die
 
@@ -65,10 +67,10 @@ src_install() {
 		cd "${S}" || die
 		#echo "" | python ./cp-install
 	elog "Creating install directories and moving data files"
-		mkdir -p ${D}/usr/local/share/lemma || die
-		mkdir -p ${D}/usr/local/bin || die
-		cp -r * ${D}/usr/local/share/lemma
-		ln -s  ${D}/usr/local/share/lemma/lemma.py ${D}/usr/local/bin/lemma
+		mkdir -p ${D}/usr/share/lemma || die
+		mkdir -p ${D}/usr/bin || die
+		cp -r * ${D}/usr/share/lemma
+		ln -s  ${D}/usr/share/lemma/lemma.py ${D}/usr/bin/lemma
 		#distutils-r1_src_install
 	#fi
 	elog "docs install"
@@ -82,6 +84,10 @@ src_install() {
 	#	use python && dodoc -r demos/python
 	#fi
 }
+
+no_src_install(){
+    python2 install.py --prefix=/usr --noprompt
+	}
 
 pkg_postinst() {
 	elog "At end of install, ..."
