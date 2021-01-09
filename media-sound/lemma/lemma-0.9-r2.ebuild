@@ -6,7 +6,7 @@ EAPI=5
 
 inherit git-r3
 
-PYTHON_COMPAT=( python{2_7,3_8} pypy pypy2_0 )
+PYTHON_COMPAT=( python{3_6,3_8} pypy pypy2_0 )
 
 inherit autotools autotools-utils distutils-r1 multilib
 
@@ -42,7 +42,7 @@ AUTOTOOLS_IN_SOURCE_BUILD=0
 src_prepare() {
 	elog "Running src_prepare"
 	#epatch ${FILESDIR}/env-python.patch
-	eapply_user
+	#eapply_user
 
 	#cd .. || die
 
@@ -61,7 +61,7 @@ src_compile() {
 #	autotools-utils_src_compile
 }
 
-src_install() {
+no_src_install() {
 
 	elog "Running src_install"
 	#if use python ; then
@@ -88,8 +88,14 @@ src_install() {
 	#fi
 }
 
-no_src_install(){
-    python2 install.py --prefix=/usr --noprompt
+src_install(){
+	cd ${WORKINGDIR}
+	pwd
+	ls
+	cd ${S}/${P}/src
+	pwd
+	ls
+    python3 install.py --prefix=${D}usr --noprompt
 	}
 
 pkg_postinst() {
