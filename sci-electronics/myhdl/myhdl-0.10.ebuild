@@ -4,7 +4,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6,3_7,3_8,3_9} )
+PYTHON_COMPAT=( python{3_4,3_5,3_6,3_7,3_8,3_9} )
 inherit git-r3 distutils-r1
 
 DESCRIPTION="MyHDL is a Python package for using Python as a hardware description and verification language."
