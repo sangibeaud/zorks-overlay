@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~mips ~sparc ~x86"
 
-DEPEND="x11-libs/gdk-pixbuf2
+DEPEND="x11-libs/gdk-pixbuf
 		x11-libs/gtk+:3
 		virtual/jack"
 RDEPEND="${DEPEND}"
