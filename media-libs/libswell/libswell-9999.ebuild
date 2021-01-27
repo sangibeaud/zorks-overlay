@@ -14,7 +14,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~mips ~sparc ~x86"
 
-DEPEND=""
+DEPEND="x11-libs/gdk-pixbuf2
+		x11-libs/gtk+:3
+		virtual/jack"
 RDEPEND="${DEPEND}"
 
 IUSE=""
@@ -22,7 +24,7 @@ IUSE=""
 src_compile() {
     #econf --with-posix-regex
 	cd WDL/swell
-	make
+	emake
 }
 
 src_install() {
