@@ -4,7 +4,8 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 python3_4 )
+#PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python3_8 )
 inherit distutils-r1
 
 DESCRIPTION="MyHDL is a Python package for using Python as a hardware description and verification language."
