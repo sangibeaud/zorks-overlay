@@ -4,7 +4,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} pypy pypy2_0 )
+PYTHON_COMPAT=( python{3_6,3_7,3_8} pypy pypy3 )
 
 inherit autotools autotools-utils distutils-r1 multilib
 
