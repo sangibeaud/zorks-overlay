@@ -34,6 +34,7 @@ RDEPEND="${PYTHON_DEPS}
 	smf? ( media-libs/libsmf:= )
 	osc? ( >=media-libs/pyliblo-0.9.1-r1:=[${PYTHON_USEDEP}] )"
 DEPEND="${RDEPEND}
+	dev-python/decorator
 	virtual/pkgconfig"
 
 PATCHES=( "${FILESDIR}"/${P}-boost_python.patch )
