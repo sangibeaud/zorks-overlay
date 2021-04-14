@@ -4,19 +4,22 @@
 
 EAPI=6
 
-#PYTHON_COMPAT=( python2_7 python3_4  python3_5 python3_6 )
-PYTHON_COMPAT=( python3_8 )
-inherit git-r3 distutils-r1
+#PYTHON_COMPAT=( python{3_4,3_5,3_6,3_7,3_8,3_9} )
+PYTHON_COMPAT=( python{3_8,3_9} )
+#inherit git-r3 distutils-r1
+inherit distutils-r1
 
 DESCRIPTION="MyHDL is a Python package for using Python as a hardware description and verification language."
-EGIT_REPO_URI="https://github.com/myhdl/myhdl.git"
+#EGIT_REPO_URI="https://github.com/myhdl/myhdl.git"
+#EGIT_COMMIT="refs/tags/0.10"
+SRC_URI=https://github.com/myhdl/myhdl/archive/refs/tags/${PV}.tar.gz
 
 RESTRICT="nomirror"
 HOMEPAGE="http://www.myhdl.org/"
 RDEPEND=""
 IUSE=""
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 LICENSE="LPGL-2.1"
 
 
