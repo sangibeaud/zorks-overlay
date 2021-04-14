@@ -11,7 +11,7 @@ SRC_URI="https://github.com/axoloti/axoloti/releases/download/2.0.0/axoloti-linu
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=virtual/jdk-1.8"

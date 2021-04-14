@@ -37,5 +37,12 @@ src_install(){
 	ls ${WORKDIR}
 	#cp -R "${WORKDIR}/opt" "${D}-${PV}" || die "install failed!"
 	mv ${WORKDIR}/opt/Axoloti ${WORKDIR}/opt/Axoloti-${PV}
+	ln -s "${WORKDIR}/opt/Axoloti-${PV}" ${WORKDIR}/opt/Axoloti
+	axoloti_runtime="blah_blah"
+	mkdir -p ${WORKDIR}/usr/bin/
+	echo "PATH=${axoloti_runtime}:\$PATH /opt/Axoloti/Axoloti" >> ${WORKDIR}/usr/bin/axoloti
 	cp -R "${WORKDIR}/opt" "${D}" || die "install failed!"
+	doexe /usr/bin/axoloti
+
+
 }
