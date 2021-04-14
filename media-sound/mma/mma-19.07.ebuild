@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-tcltk/snack/snack-2.2.10-r6.ebuild,v 1.3 2014/03/31 21:01:52 mgorny Exp $
 
-EAPI=5
+EAPI=6
 
 PYTHON_COMPAT=( python{3_6,3_7,3_8} pypy pypy3 )
 
-inherit autotools autotools-utils distutils-r1 multilib
+inherit autotools distutils-r1 multilib
 
 DESCRIPTION="Musical Midi Accompaniement"
 HOMEPAGE="http://www.mellowood.ca/"
@@ -40,7 +40,7 @@ AUTOTOOLS_IN_SOURCE_BUILD=0
 	#"${FILESDIR}"/${P}-CVE-2012-6303-fix.patch
 #	)
 
-src_prepare() {
+no_src_prepare() {
 	elog "Running src_prepare"
 
 	#cd .. || die
