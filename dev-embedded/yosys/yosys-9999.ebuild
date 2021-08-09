@@ -3,7 +3,7 @@
 
 EAPI="6"
 
-PYTHON_COMPAT=( python3_{4,5,6,7} )
+PYTHON_COMPAT=( python3_{4,5,6,7,8,9} )
 inherit eutils git-r3 python-any-r1
 
 DESCRIPTION="Yosys - Yosys Open SYnthesis Suite"
