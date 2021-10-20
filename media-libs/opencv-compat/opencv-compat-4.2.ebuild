@@ -24,7 +24,7 @@ src_unpack(){
 src_install(){
 
 	for thisone in core imgproc objdetect; do
-                dosym ./libopencv_${thisone}.so /usr/$(get_libdir)/libopencv-${thisone}.so.${PV}
+                dosym ./libopencv_${thisone}.so /usr/$(get_libdir)/libopencv_${thisone}.so.${PV}
         done
 }
 
