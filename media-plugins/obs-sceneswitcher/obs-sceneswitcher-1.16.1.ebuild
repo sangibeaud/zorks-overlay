@@ -12,7 +12,8 @@ SLOT="0"
 KEYWORDS="~amd64 "
 
 DEPEND="media-video/obs-studio
-	>=media-libs/opencv-4.2"
+	>=media-libs/opencv-4.2
+	=media-libs/opencv-compat-4.2"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
