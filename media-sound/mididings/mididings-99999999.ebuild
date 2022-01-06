@@ -14,7 +14,7 @@ if [ "${PV}" = "99999999" ]; then
 	inherit git-r3
 	#EGIT_REPO_URI="git://github.com/dsacre/mididings.git"
 	#EGIT_REPO_URI="git://github.com/rodisch/mididings.git"
-	EGIT_REPO_URI="git://github.com/rralf/mididings.git"
+	EGIT_REPO_URI="https://github.com/rralf/mididings.git"
 	KEYWORDS="~amd64"
 else
 	SRC_URI="http://das.nasophon.de/download/${P}.tar.gz"
