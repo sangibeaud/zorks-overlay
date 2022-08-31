@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # requires proaudio overlay
-EAPI=6
-inherit git-r3 cmake-utils
+EAPI=8
+inherit git-r3 cmake
 
 DESCRIPTION="Rakkarack lv2 plugins"
 HOMEPAGE="http://github.com/ssj71/rkrlv2"
