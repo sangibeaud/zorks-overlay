@@ -1,10 +1,10 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 
-inherit git-r3 cmake-utils
+inherit git-r3 cmake
 
 DESCRIPTION="Software for Fender Mustang Amps. This is a fork of piorekf's Plug."
 HOMEPAGE="https://github.com/offa/plug"
@@ -32,6 +32,7 @@ src_prepare() {
 	sed -i "s/\/lib\/udev\/rules.d/\/etc\/udev\/rules.d/" cmake/Install.cmake
 	sed -i "s/\/lib\/share\/applications/\/usr\/share\/applications/" cmake/Install.cmake
 	#epatch "${FILESDIR}/${PN}-cmake.patch"
+	eapply_user
 }
 
 src_configure() {
