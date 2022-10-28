@@ -33,10 +33,10 @@ echo 'MAKEOPTS="-j5"' >> /etc/portage/make.conf
 echo 'VIDEO_CARDS="intel"' >> /etc/portage/make.conf
 
 # Disable LLVM support in mesa
-echo "media-libs/mesa -llvm" > /etc/portage/package.use/audio-overlay
+echo "media-libs/mesa -llvm" > /etc/portage/package.use/zorks-overlay
 
 # Ensure we use dev-lang/rust-bin
-echo "dev-lang/rust" > /etc/portage/package.mask/audio-overlay
+echo "dev-lang/rust" > /etc/portage/package.mask/zorks-overlay
 
 # Show emerge info for troubleshooting purposes
 emerge --info
@@ -54,7 +54,7 @@ export DISTDIR="/tmp/distfiles"
 # Setup overlay
 mkdir -p /etc/portage/repos.conf
 cat > /etc/portage/repos.conf/localrepo.conf <<EOF
-[audio-overlay]
+[zorks-overlay]
 location = /usr/local/portage
 EOF
 

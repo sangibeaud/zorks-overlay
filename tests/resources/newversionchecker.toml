@@ -1,4 +1,4 @@
-github_repo = "gentoo-audio/audio-overlay"
+github_repo = "gentoo-audio/zorks-overlay"
 check_interval = 24
 
 [projects]
