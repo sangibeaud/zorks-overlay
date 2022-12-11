@@ -33,7 +33,7 @@ jobs:
 
   check new versions:
     machine: true
-    resource_class: small
+    resource_class: large
     steps:
       - checkout
       - run: ./tests/newversioncheck.sh
