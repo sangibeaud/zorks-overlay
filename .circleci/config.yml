@@ -37,19 +37,31 @@ jobs:
       - checkout
       - run: ./tests/newversioncheck.sh
       
-  #emerge all ebuilds:
-  #  machine: true
-  #  resource_class: large
-  #  steps:
-  #    - checkout
-  #    - restore_cache:
-  #        key: portage-pkgdir-emerge
-  #    - run: ./tests/emerge-all-ebuilds.sh
-  #    - save_cache:
-  #        key: portage-pkgdir-emerge-{{ epoch }}
-  #        paths:
-  #          - ~/.portage-pkgdir          
+  emerge all ebuilds:
+    machine: true
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          key: portage-pkgdir-emerge
+      - run: ./tests/emerge-all-ebuilds.sh
+      - save_cache:
+          key: portage-pkgdir-emerge-{{ epoch }}
+          paths:
+            - ~/.portage-pkgdir          
 
+  emerge random ebuild:
+    machine: true
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          key: portage-pkgdir-emerge
+      - run: ./tests/emerge-random-ebuild.sh
+      - save_cache:
+          key: portage-pkgdir-emerge-{{ epoch }}
+          paths:
+            - ~/.portage-pkgdir
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -59,6 +71,12 @@ workflows:
   build-workflow:
     jobs:
       - build
-  check-new:
+  #check-new:
+  #  jobs:
+  #    - check new versions
+  #emerge-all:
+  #  jobs:
+  #    - emerge all ebuilds
+  emerge-random:
     jobs:
-      - check new versions
+      - emerge random ebuild
