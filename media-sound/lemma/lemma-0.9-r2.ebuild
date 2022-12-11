@@ -6,7 +6,7 @@ EAPI=6
 
 inherit git-r3
 
-PYTHON_COMPAT=( python{3_6,3_8} pypy pypy2_0 )
+PYTHON_COMPAT=( python{3_6,3_8,3_9,3_10} pypy pypy2_0 )
 
 inherit autotools distutils-r1 multilib
 

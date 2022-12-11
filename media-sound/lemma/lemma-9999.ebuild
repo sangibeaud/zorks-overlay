@@ -6,7 +6,7 @@ EAPI=6
 
 inherit git-r3
 
-PYTHON_COMPAT=( python{3_6,3_8} pypy pypy2_0 )
+PYTHON_COMPAT=( python{3_6,3_8,3_9,3_10} pypy pypy2_0 )
 
 #inherit autotools autotools-utils distutils-r1 multilib
 inherit autotools distutils-r1 multilib
@@ -96,7 +96,8 @@ src_install(){
 	cd ${S}/${P}/src
 	pwd
 	ls
-    python3 install.py --prefix=${D}usr --noprompt
+	python3 install.py --prefix=${D}usr --noprompt
+	ewarn Warning this ebuild fails to install some doc files.
 	}
 
 pkg_postinst() {
