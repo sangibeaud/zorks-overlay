@@ -26,17 +26,17 @@ jobs:
           name: Running tests
           command: |
             echo "running tests"
-      - run: ./test/newversioncheck.sh
+      - run: ./tests/newversioncheck.sh
       - store_artifacts:
           path: test-reports/
           destination: reports
 
-  #check new versions:
-  #  machine: true
-  #  resource_class: large
-  #  steps:
-  #    - checkout
-  #    - run: ./tests/newversioncheck.sh
+  check new versions:
+    machine: true
+    resource_class: small
+    steps:
+      - checkout
+      - run: ./tests/newversioncheck.sh
       
   #emerge all ebuilds:
   #  machine: true
