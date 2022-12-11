@@ -30,7 +30,6 @@ jobs:
       - store_artifacts:
           path: test-reports/
           destination: reports
-
   check new versions:
     machine: true
     resource_class: small
@@ -60,5 +59,6 @@ workflows:
   build-workflow:
     jobs:
       - build
-      # - check new versions
-  
+  check-new:
+    jobs:
+      - check new versions
