@@ -19,7 +19,7 @@ jobs:
           command: "echo Hello, World!"
   build:
     docker:
-      - image: cimg/default:latest
+      - image: cimg/base:latest
     steps:
       - checkout
       - run:
