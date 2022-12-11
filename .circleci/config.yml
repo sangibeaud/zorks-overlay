@@ -17,26 +17,38 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
- 
-  check new versions:
-    machine: true
-    resource_class: large
+  build:
+    docker:
+      - image: cimg/default:latest
     steps:
       - checkout
-      - run: ./tests/newversioncheck.sh
+      - run:
+          name: Running tests
+          command: |
+            echo "running tests"
+      - store_artifacts:
+          path: test-reports/
+          destination: reports
+
+  #check new versions:
+  #  machine: true
+  #  resource_class: large
+  #  steps:
+  #    - checkout
+  #    - run: ./tests/newversioncheck.sh
       
-  emerge all ebuilds:
-    machine: true
-    resource_class: large
-    steps:
-      - checkout
-      - restore_cache:
-          key: portage-pkgdir-emerge
-      - run: ./tests/emerge-all-ebuilds.sh
-      - save_cache:
-          key: portage-pkgdir-emerge-{{ epoch }}
-          paths:
-            - ~/.portage-pkgdir          
+  #emerge all ebuilds:
+  #  machine: true
+  #  resource_class: large
+  #  steps:
+  #    - checkout
+  #    - restore_cache:
+  #        key: portage-pkgdir-emerge
+  #    - run: ./tests/emerge-all-ebuilds.sh
+  #    - save_cache:
+  #        key: portage-pkgdir-emerge-{{ epoch }}
+  #        paths:
+  #          - ~/.portage-pkgdir          
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -44,7 +56,8 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-  checks:
+  build-workflow:
     jobs:
-      - check new versions
+      - build
+      # - check new versions
   
