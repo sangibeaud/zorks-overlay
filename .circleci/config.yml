@@ -26,6 +26,7 @@ jobs:
           name: Running tests
           command: |
             echo "running tests"
+      - run: ./test/newversionheck.sh
       - store_artifacts:
           path: test-reports/
           destination: reports
