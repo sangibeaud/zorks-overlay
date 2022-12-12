@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python{3_6,3_7,3_8,3_9} )
+PYTHON_COMPAT=( python{3_6,3_7,3_8,3_9,3_10} )
 #PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="tk?"
 inherit distutils-r1
@@ -10,7 +10,7 @@ inherit distutils-r1
 DESCRIPTION="A MIDI router and processor based on Python, supporting ALSA and JACK MIDI"
 HOMEPAGE="http://das.nasophon.de/mididings/"
 
-if [ "${PV}" = "99999999" ]; then
+if [ "${PV}" = "9999" ]; then
 	inherit git-r3
 	#EGIT_REPO_URI="git://github.com/dsacre/mididings.git"
 	#EGIT_REPO_URI="git://github.com/rodisch/mididings.git"
