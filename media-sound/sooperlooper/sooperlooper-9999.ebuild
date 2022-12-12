@@ -25,7 +25,7 @@ RDEPEND="
 	>=media-libs/libsndfile-1.0.2
 	>=media-libs/libsamplerate-0.0.13
 	dev-libs/libxml2
-	sys-libs/ncurses[-tinfo]
+	sys-libs/ncurses
 	>=media-libs/rubberband-0.0.13
 	sci-libs/fftw:3.0
 	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER} )
