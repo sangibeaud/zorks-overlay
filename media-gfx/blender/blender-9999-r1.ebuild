@@ -1,13 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 #PYTHON_COMPAT=( python3_{7,8} )
-PYTHON_COMPAT=( python3_8 )
+PYTHON_COMPAT=( python3_{8,9,10} )
 
-inherit git-r3 check-reqs cmake-utils xdg-utils flag-o-matic gnome2-utils \
-	 pax-utils python-single-r1 toolchain-funcs eapi7-ver 
+inherit git-r3 check-reqs cmake xdg-utils flag-o-matic gnome2-utils \
+	pax-utils python-single-r1 toolchain-funcs
 #inherit git-r3 check-reqs cmake-utils xdg-utils flag-o-matic gnome2-utils \
 #	pax-utils python-single-r1 toolchain-funcs eapi7-ver
 
@@ -122,7 +122,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 
 	# we don't want static glew, but it's scattered across
 	# multiple files that differ from version to version
@@ -201,11 +201,11 @@ src_configure() {
 		-DWITH_MEM_JEMALLOC=$(usex jemalloc)
 		-DWITH_MEM_VALGRIND=$(usex valgrind)
 	)
-	cmake-utils_src_configure -DTARGET=lite
+	cmake_src_configure -DTARGET=lite
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 
 	if use doc; then
 		# Workaround for binary drivers.
