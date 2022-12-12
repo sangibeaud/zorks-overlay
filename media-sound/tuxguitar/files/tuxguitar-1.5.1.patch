@@ -1,0 +1,75 @@
+--- a/TuxGuitar-gpx/build.xml	2018-06-15 00:08:16.846582120 +0300
++++ b/TuxGuitar-gpx/build.xml	2018-06-15 00:42:29.823353256 +0300
+@@ -10,11 +10,13 @@
+ 	<property name="build.share.path" value="share${file.separator}" />
+ 	<property name="build.path" value="build${file.separator}" />
+ 	<property name="build.jar" value="tuxguitar-gpx.jar" />
++	<property name="lib.commons_compress" value="/usr/share/commons-compress"></property>
+ 	
+ 	<path id="class.path">
+ 		<pathelement location="${path.tuxguitar-lib}"/>
+ 		<pathelement location="${path.tuxguitar-gm-utils}"/>
+ 		<pathelement location="${path.tuxguitar}"/>
++		<fileset dir="${lib.commons_compress}" includes="**/*.jar"/>
+ 	</path >
+ 	
+ 	<target name="init" depends="clean">
+--- a/TuxGuitar-gtp-ui/build.xml	2018-06-17 18:27:50.009821143 +0300
++++ b/TuxGuitar-gtp-ui/build.xml	2018-06-17 18:28:06.731886968 +0300
+@@ -9,7 +9,7 @@
+ 	<property name="build.src.path" value="src${file.separator}" />
+ 	<property name="build.share.path" value="share${file.separator}" />
+ 	<property name="build.path" value="build${file.separator}" />
+-	<property name="build.jar" value="tuxguitar-gtp.jar" />
++	<property name="build.jar" value="tuxguitar-gtp-ui.jar" />
+ 	
+ 	<path id="class.path">
+ 		<pathelement location="${path.tuxguitar-lib}"/>
+--- a/TuxGuitar-image/build.xml	2018-06-16 16:38:40.372607993 +0300
++++ b/TuxGuitar-image/build.xml	2018-06-16 16:40:01.296913057 +0300
+@@ -18,6 +18,7 @@
+ 		<pathelement location="${path.tuxguitar-ui-toolkit}"/>
+ 		<pathelement location="${path.tuxguitar-ui-toolkit-swt}"/>
+ 		<pathelement location="${path.swt}"/>
++		<fileset dir="../" includes="**/*.jar"/>
+ 	</path>
+ 	
+ 	<target name="init" depends="clean">
+--- a/TuxGuitar-jsa/build.xml	2018-06-17 18:22:22.370532155 +0300
++++ b/TuxGuitar-jsa/build.xml	2018-06-17 18:21:48.876400461 +0300
+@@ -16,6 +16,7 @@
+ 		<pathelement location="${path.tuxguitar-gm-utils}"/>
+ 		<pathelement location="${path.tuxguitar}"/>
+ 		<pathelement location="${path.tuxguitar-ui-toolkit}"/>
++		<fileset dir="../" includes="**/*.jar"/>
+ 	</path >
+ 	
+ 	<target name="init" depends="clean">
+--- a/TuxGuitar-ui-toolkit-swt/build.xml	2018-06-15 20:28:24.832778356 +0300
++++ b/TuxGuitar-ui-toolkit-swt/build.xml	2018-06-15 20:29:08.295947053 +0300
+@@ -15,6 +15,7 @@
+ 		<pathelement location="${path.tuxguitar-ui-toolkit}"/>
+ 		<pathelement location="${path.tuxguitar-ui-toolkit-swt}"/>
+ 		<pathelement location="${path.swt}"/>
++		<pathelement location="../TuxGuitar-lib/tuxguitar-lib.jar"></pathelement>
+ 	</path>
+ 	
+ 	<target name="init" depends="clean">
+--- a/TuxGuitar-ui-toolkit/build.xml	2018-06-14 13:15:19.157119252 +0300
++++ b/TuxGuitar-ui-toolkit/build.xml	2018-06-14 13:15:52.863509043 +0300
+@@ -19,6 +19,14 @@
+ 		<echo>|          B U I L D I N G   L I B R A R Y        |</echo>
+ 		<echo>+-------------------------------------------------+</echo>
+ 		
++    <javac srcdir="${build.src.path}" destdir="${build.path}">
++      <classpath>
++        <fileset dir="../">
++          <include name="**/*.jar"/>
++        </fileset>
++      </classpath>
++    </javac>
++
+ 		<javac srcdir="${build.src.path}" destdir="${build.path}" debug="false" >
+ 			<include name="**/*.java"/>
+ 		</javac>
+

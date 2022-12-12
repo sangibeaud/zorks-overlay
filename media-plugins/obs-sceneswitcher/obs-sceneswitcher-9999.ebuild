@@ -38,6 +38,6 @@ src_install(){
 
 src_compile(){
 
-	cmake -DBUILD_OUT_OF_TREE=1 -DLIBOBS_INCLUDE_DIR=[...]/obs-studio/libobs/ -DLIBOBS_LIB=[...]/libobs.so -DLIBOBS_FRONTEND_INCLUDE_DIR=[...]/obs-studio/UI/obs-frontend-api/ -DLIBOBS_FRONTEND_API_LIB=/usr/lib64/libobs-frontend-api.so -DCMAKE_INSTALL_PREFIX=/usr .. 
+	cmake -DBUILD_OUT_OF_TREE=1 -DLIBOBS_INCLUDE_DIR=[...]/obs-studio/libobs/ -DLIBOBS_LIB=[...]/libobs.so -DLIBOBS_FRONTEND_INCLUDE_DIR=[...]/obs-studio/UI/obs-frontend-api/ -DLIBOBS_FRONTEND_API_LIB=/usr/lib64/libobs-frontend-api.so -DCMAKE_INSTALL_PREFIX=/usr 
 
 }

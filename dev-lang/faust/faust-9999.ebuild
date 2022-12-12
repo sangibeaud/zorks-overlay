@@ -37,6 +37,7 @@ src_prepare() {
 		#fi
 		patch --verbose -p1 < "$FILESDIR"/faust-memcpy.patch
 	fi
+	eapply_user
 
 }
 
