@@ -47,6 +47,7 @@ src_prepare() {
 	cp -rf "/usr/share/aclocal" "${S}" || die "copying aclocal failed"
 
 #	AT_M4DIR="${S}"/aclocal eautoreconf
+	eapply_user
 }
 
 src_configure() {
