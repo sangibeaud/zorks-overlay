@@ -9,7 +9,7 @@ inherit git-r3 cmake
 DESCRIPTION="Software for Fender Mustang Amps. This is a fork of piorekf's Plug."
 HOMEPAGE="https://github.com/offa/plug"
 EGIT_REPO_URI="https://github.com/offa/plug"
-EGIT_COMMIT="tags/v1.4.2"
+EGIT_COMMIT="tags/v1.4.3"
 
 LICENSE="GPL3"
 SLOT="0"
