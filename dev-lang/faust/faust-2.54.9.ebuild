@@ -1,75 +1,45 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI="7"
+IUSE=""
 
-inherit cmake
+inherit git-r3
 
-DESCRIPTION="Faust programming language"
-HOMEPAGE="https://github.com/grame-cncm/faust"
-SRC_URI="https://github.com/grame-cncm/faust/archive/refs/tags/${PV}.tar.gz"
-
-#EGIT_REPO_URI="https://github.com/grame-cncm/faust.git"
-#EGIT_COMMIT="v2-5-10"
-
-LICENSE="iGPL"
 SLOT="0"
-KEYWORDS="amd64"
-IUSE="remote"
+LICENSE="GPL-2"
+KEYWORDS="~x86 ~amd64"
+#QA_PREBUILT="*"
+#QA_FLAGS_IGNORED=".*"
+#FAUST_LIB_COMMIT="8d7cd8ffaad4ad5fb996b965f53d8ec01229a5e9"
 
-DEPEND="net-libs/libmicrohttpd"
-RDEPEND="${DEPEND}"
+DESCRIPTION="functional programming language for realtime audio plugins"
+HOMEPAGE="http://faust.grame.fr"
+EGIT_REPO_URI="https://github.com/grame-cncm/faust.git"
+EGIT_COMMIT=${PV}
 
+RDEPEND="
+	sys-devel/bison
+	sys-devel/flex
+"
+DEPEND="sys-apps/sed"
 
-no_src_prepare() {
-	cd $S
-	git submodule update --init
+BDEPEND="dev-util/cmake"
 
-	#eapply_user
-
-	if use remote; then
-		#remote_prepare
-		echo conditional patch if jack-audio is 0.125
-		#if [ $(jackd --version | grep -q "0.125") ]; then
-		jackd --version
-	    jackd --version | grep -q "0.125"  && echo "Version 0.125 !"
-		echo ${FILESDIR}
-	    jackd --version | grep -q "0.125"  && patch --verbose -p1 < "${FILESDIR}/jack-midi-0.125.patch"
-		#else
-		#	echo "... and it isn't"
-		#fi
-		patch --verbose -p1 < "$FILESDIR"/faust-memcpy.patch
-	fi
-
+src_prepare() {
+	eapply_user
+	#rmdir libraries
+	#mv ../faustlibraries-${FAUST_LIB_COMMIT} libraries
+	sed -i "s/\/usr\/local/\/usr/g" Makefile || die
 }
 
-no_remote_prepare() {
-	echo old school prepare with sed
-	jackd --version | grep -q "0.125"  && \
-		sed  -i "s/jack_midi_reset_buffer/jack_midi_clear_buffer/" ${S}/architecture/faust/midi/jack-midi.h
-	epatch --verbose "$FILESDIR"/faust-memcpy.patch
+src_compile() {
+	emake PREFIX=/usr || die "parallel make failed"
 }
 
-really_no_src_compile(){
-	PREFIX=/usr emake 
+src_install() {
+	#dodir ${D}/usr/lib/faust
+	make install DESTDIR=${D}
+	#dodoc README.md
 }
-
-no_src_compile() {
-	#emake compiler
-	#emake all
-	#if use remote; then
-	#	PREFIX=/usr emake httpd
-	#	PREFIX=/usr emake 
-	#else
-	#	PREFIX=/usr emake light
-	#fia
-	cd ${WORKDIR}/build
-}
-
-
-no_src_install() {
-	PREFIX=/usr emake DESTDIR="${D}" install
-
-}
-
 
