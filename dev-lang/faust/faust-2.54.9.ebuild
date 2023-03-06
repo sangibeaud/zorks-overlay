@@ -8,7 +8,7 @@ inherit git-r3
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 amd64"
 #QA_PREBUILT="*"
 #QA_FLAGS_IGNORED=".*"
 #FAUST_LIB_COMMIT="8d7cd8ffaad4ad5fb996b965f53d8ec01229a5e9"
