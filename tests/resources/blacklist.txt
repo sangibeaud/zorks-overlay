@@ -9,6 +9,7 @@ media-sound/jamulus
 media-sound/reaper
 ###media-sound/synthe
 media-plugins/obs-
+media-plugins/lsp-plugins
 media-sound/
 media-gfx/
 media-libs/
