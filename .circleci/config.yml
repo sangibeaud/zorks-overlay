@@ -57,7 +57,7 @@ jobs:
       - checkout
       - restore_cache:
           key: portage-pkgdir-emerge
-      - run: echo ./tests/emerge-random-ebuild.sh
+      - run: ./tests/emerge-random-ebuild.sh
       - save_cache:
           key: portage-pkgdir-emerge-{{ epoch }}
           paths:
