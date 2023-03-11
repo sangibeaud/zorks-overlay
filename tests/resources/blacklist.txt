@@ -1,15 +1,19 @@
+###
+### list of string that are to be matched against the ebuild name.
+### to exclude from CI
+### 
 dev-embedded/xilinx
-dev-embedded/
-dev-lang/faust/
+###dev-embedded/
+###dev-lang/faust/
 media-sound/jamulus
 media-sound/reaper
-media-sound/synthe
+###media-sound/synthe
 media-plugins/obs-
-###media-sound/
+media-sound/
 media-gfx/
 media-libs/
 media-plugins/obs
 dev-embedded/yosys/yosys-0.7
-x11-wm
+###x11-wm
 ####
 dokuwiki
