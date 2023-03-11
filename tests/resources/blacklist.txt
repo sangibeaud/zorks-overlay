@@ -1,0 +1,15 @@
+dev-embedded/xilinx
+dev-embedded/
+dev-lang/faust/
+media-sound/jamulus
+media-sound/reaper
+media-sound/synthe
+media-plugins/obs-
+###media-sound/
+media-gfx/
+media-libs/
+media-plugins/obs
+dev-embedded/yosys/yosys-0.7
+x11-wm
+####
+dokuwiki
