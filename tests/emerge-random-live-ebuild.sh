@@ -11,6 +11,6 @@ fi
 SCRIPT_PATH=$(dirname "$0")
 
 # Pick a random live ebuild
-EBUILD=$(find . -regextype egrep -regex '.+9999(-r[0-9]+)?.ebuild' -printf '%P\n' | shuf -n1)
+EBUILD=$(grep -R -l "^KEYWORDS=\".*[~ ]amd64" `find . -name *.ebuild` | egrep '.+9999(-r[0-9]+)?.ebuild' | grep -vf tests/resources/blacklist.txt | shuf -n1 | sed -e "s/^\.\///")
 
 ${SCRIPT_PATH}/emerge-ebuild.sh "${EBUILD}"
