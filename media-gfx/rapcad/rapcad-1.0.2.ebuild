@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 
 DEPEND=">=dev-qt/qtcore-5.5
 	dev-qt/qtwidgets
+	dev-qt/qtopengl
 	dev-qt/qtconcurrent
 	dev-qt/qtgui
 	x11-libs/libdrm
