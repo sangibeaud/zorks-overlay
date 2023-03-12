@@ -3,18 +3,17 @@
 ### to exclude from CI
 ### 
 dev-embedded/xilinx
-###dev-embedded/
-###dev-lang/faust/
+### dev-embedded/
+### dev-lang/faust/
 media-sound/jamulus
-media-sound/reaper
-###media-sound/synthe
+### media-sound/reaper
+### media-sound/synthe
 media-plugins/obs-
 media-plugins/lsp-plugins
-media-sound/
-media-gfx/
-media-libs/
-media-plugins/obs
+### media-sound/
+### media-gfx/
+### media-libs/
 dev-embedded/yosys/yosys-0.7
-###x11-wm
+### x11-wm
 ####
 dokuwiki
