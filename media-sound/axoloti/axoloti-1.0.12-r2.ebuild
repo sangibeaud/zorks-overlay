@@ -11,7 +11,7 @@ SRC_URI="https://github.com/axoloti/axoloti/releases/download/${PV}/axoloti-linu
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=virtual/jdk-1.8"
@@ -42,7 +42,6 @@ src_install(){
 	mkdir -p ${WORKDIR}/usr/bin/
 	echo "PATH=${axoloti_runtime}:\$PATH /opt/Axoloti/Axoloti" >> ${WORKDIR}/usr/bin/axoloti
 	cp -R "${WORKDIR}/opt" "${D}" || die "install failed!"
-	doexe /usr/bin/axoloti
-
+    #doexe usr/bin/axoloti
 
 }

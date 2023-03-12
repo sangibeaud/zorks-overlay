@@ -11,7 +11,7 @@ SRC_URI="https://github.com/axoloti/axoloti/releases/download/${PV}/axoloti-linu
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=">=virtual/jdk-1.8"
@@ -28,9 +28,8 @@ RDEPEND="${DEPEND}"
 
 src_unpack(){
 	unpack_deb ${A}
-#mkdir -p ${WORKDIR}/foo
-mkdir -p ${WORKDIR}/${PN}-${PV}
-elog "Nthing to prepare"
+	mkdir -p ${WORKDIR}/${PN}-${PV}
+	elog "Nthing to prepare"
 }
 
 src_install(){
