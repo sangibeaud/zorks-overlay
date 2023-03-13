@@ -5,6 +5,7 @@
 dev-embedded/xilinx
 ### dev-embedded/
 ### dev-lang/faust/
+media-libs/libswell
 media-sound/jamulus
 media-sound/reaper
 ### media-sound/synthe
