@@ -24,9 +24,6 @@ src_configure(){
 	./configure --prefix=/usr
 }
 
-no_src_compile(){
-	make
-}
 
 no_src_install(){
 	make install
