@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=" >=dev-util/cmake-3.12.0
+	dev-util/ninja
 	dev-libs/libusb
 	>=dev-qt/qtcore-5
 	>=dev-qt/qtwidgets-5
