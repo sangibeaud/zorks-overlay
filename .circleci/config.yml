@@ -68,9 +68,9 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-  build-workflow:
-    jobs:
-      - build
+  #build-workflow:
+  #  jobs:
+  #    - build
   #check-new:
   #  jobs:
   #    - check new versions
