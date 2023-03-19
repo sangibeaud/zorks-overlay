@@ -93,9 +93,9 @@ workflows:
   emerge-changed:
     jobs:
       - emerge new ebuilds
-  #emerge-all:
-  #  jobs:
-  #    - emerge all ebuilds
+  emerge-all:
+    jobs:
+      - emerge all ebuilds
   emerge-random:
     jobs:
       - emerge random ebuild
