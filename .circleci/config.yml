@@ -50,14 +50,14 @@ jobs:
           paths:
             - ~/.portage-pkgdir
        
-  emerge new ebuild:
+  emerge new ebuilds:
     machine: true
     resource_class: large
     steps:
       - checkout
       - restore_cache:
           key: portage-pkgdir-emerge
-      - run: ./tests/emerge-new-ebuild.sh
+      - run: ./tests/emerge-new-or-changed-ebuilds.sh
       - save_cache:
           key: portage-pkgdir-emerge-{{ epoch }}
           paths:
@@ -87,6 +87,9 @@ workflows:
   #check-new:
   #  jobs:
   #    - check new versions
+  emerge-changed:
+    jobs:
+      - emerge new ebuilds
   #emerge-all:
   #  jobs:
   #    - emerge all ebuilds
