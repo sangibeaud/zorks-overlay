@@ -14,14 +14,14 @@ IUSE=""
 
 DEPEND="
 	>=media-libs/zita-alsa-pcmi-0.2.0
-	>=media-libs/libclthreads-2.4
+	=media-libs/libclthreads-2.4.2
 	>=media-libs/libclxclient-3.9
 	media-libs/libsndfile
 	media-libs/alsa-lib
 	virtual/jack
 	"
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="${DEPEND}"
 
 src_compile() {
 	emake -C ${S}/source PREFIX=/usr aliki
