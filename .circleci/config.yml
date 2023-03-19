@@ -48,7 +48,20 @@ jobs:
       - save_cache:
           key: portage-pkgdir-emerge-{{ epoch }}
           paths:
-            - ~/.portage-pkgdir          
+            - ~/.portage-pkgdir     
+
+emerge new ebuilds:
+    machine: true
+    resource_class: large
+    steps:
+      - checkout
+      - restore_cache:
+          key: portage-pkgdir-emerge
+      - run: ./tests/emerge-new-ebuilds.sh
+      - save_cache:
+          key: portage-pkgdir-emerge-{{ epoch }}
+          paths:
+            - ~/.portage-pkgdir
 
   emerge random ebuild:
     machine: true
