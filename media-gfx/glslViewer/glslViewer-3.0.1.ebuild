@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3
+inherit cmake git-r3
 
 DESCRIPTION="iCommand line glsl viewer"
 HOMEPAGE="http://patriciogonzalezvivo.com/2015/glslViewer/"
