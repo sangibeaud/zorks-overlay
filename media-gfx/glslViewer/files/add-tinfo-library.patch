@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b58182a..fa89f66 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -151,7 +151,7 @@ else()
+         set(CPACK_GENERATOR "ZIP")
+ 
+     else()
+-        target_link_libraries(glslViewer PRIVATE pthread dl lo_static)
++        target_link_libraries(glslViewer PRIVATE pthread dl lo_static tinfo)
+         install(TARGETS glslViewer DESTINATION bin)
+ 
+         if (NOT APPLE)
