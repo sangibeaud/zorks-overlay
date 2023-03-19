@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit autotools git-r3
+inherit autotools git-r3 qmake-utils
 
 DESCRIPTION="sends and receives MIDI data (ALSA Sequencer and/or JACK MIDI) over the network"
 HOMEPAGE="https://qmidinet.sourceforge.io/qmidinet-index.html"
