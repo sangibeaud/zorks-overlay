@@ -60,7 +60,7 @@ jobs:
       - run: 
           command: ./tests/emerge-new-or-changed-ebuilds.sh
           environnement:
-            DEBUG: 1
+            NOTHING_DEBUG: 1
       - save_cache:
           key: portage-pkgdir-emerge-{{ epoch }}
           paths:
