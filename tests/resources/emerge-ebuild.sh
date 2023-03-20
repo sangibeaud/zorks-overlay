@@ -62,7 +62,7 @@ EOF
 EBUILD_PATHS=("${@}")
 echo ${EBUILD_PATHS}
 #for EBUILD_PATH in "${EBUILD_PATHS[@]}"
-for EBUILD_PATH in "${EBUILD_PATHS}"
+for EBUILD_PATH in ${EBUILD_PATHS}
 do
   echo "Emerging ${EBUILD_PATH}"
   EBUILD_FILENAME=$(basename "${EBUILD_PATH}" ".ebuild")
