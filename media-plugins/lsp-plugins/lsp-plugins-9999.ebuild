@@ -29,11 +29,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="dev-lang/php"
 
 
-no_src_prepare() {
-	cd ${S}
-	patch -p 1 --verbose  < ${FILESDIR}/lsp-plugins-jackd.patch
-}
-
 src_configure(){
 	emake config
 }
