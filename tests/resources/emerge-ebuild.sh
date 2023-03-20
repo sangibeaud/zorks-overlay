@@ -60,12 +60,16 @@ EOF
 
 # Emerge the ebuilds in a clean stage3
 EBUILD_PATHS=("${@}")
+echo ${EBUILD_PATHS}
 for EBUILD_PATH in "${EBUILD_PATHS[@]}"
 do
   echo "Emerging ${EBUILD_PATH}"
   EBUILD_FILENAME=$(basename "${EBUILD_PATH}" ".ebuild")
+  echo filename : ${EBUILD_FILENAME}
   EBUILD_CATEGORY="${EBUILD_PATH%%/*}"
+  echo category : ${EBUILD_CATEGORY}
   EBUILD="${EBUILD_CATEGORY}/${EBUILD_FILENAME}"
+  echo ebuild: ${EBUILD}
 
   # Source ebuild specific env vars
   unset ACCEPT_KEYWORDS
@@ -83,7 +87,7 @@ do
   fi
 
   # Emerge dependencies first
-  echo "Emerging dependencies"
+  echo "Emerging dependencies for ${PKG_CATEGORY}/${PKG_FULL_NAME}"
   emerge --tree --quiet-build --buildpkg --usepkg --onlydeps --autounmask=y --autounmask-continue=y "=${PKG_CATEGORY}/${PKG_FULL_NAME}"
 
   # Emerge the ebuild itself
