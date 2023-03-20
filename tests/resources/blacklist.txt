@@ -4,14 +4,14 @@
 ### 
 dev-embedded/xilinx
 ### dev-embedded/
-### dev-lang/faust/
+dev-lang/faust/
 ### media-gfx/rapcad
 media-libs/libswell
 media-libs/nnls-chroma
 media-sound/jamulus
 media-sound/reaper
 media-sound/mma
-### media-sound/synthe
+media-sound/synthe
 media-plugins/obs-
 media-plugins/lsp-plugins
 ### media-sound/
