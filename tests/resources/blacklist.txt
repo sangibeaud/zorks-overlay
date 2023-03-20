@@ -11,7 +11,7 @@ media-libs/nnls-chroma
 media-sound/jamulus
 media-sound/reaper
 media-sound/mma
-media-sound/synthe
+### media-sound/synthe   
 media-plugins/obs-
 media-plugins/lsp-plugins
 ### media-sound/
