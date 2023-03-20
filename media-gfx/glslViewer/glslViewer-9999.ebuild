@@ -16,6 +16,7 @@ KEYWORDS=""
 
 DEPEND="media-libs/glu
 	media-libs/glfw
+	x11-libs/libXinerama
 	media-video/ffmpeg"
 
 RDEPEND="${DEPEND}"

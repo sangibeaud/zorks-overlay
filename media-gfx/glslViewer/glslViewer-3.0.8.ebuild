@@ -17,7 +17,8 @@ KEYWORDS="~amd64"
 
 DEPEND="media-libs/glu
 	media-libs/glfw
-	media-video/ffmpeg"
+	media-video/ffmpeg
+	x11-libs/libXinerama"
 
 RDEPEND="${DEPEND}"
 BDEPEND=""
