@@ -5,7 +5,7 @@
 dev-embedded/xilinx
 ### dev-embedded/
 ### dev-lang/faust/
-media-gfx/rapcad
+### media-gfx/rapcad
 media-libs/libswell
 media-libs/nnls-chroma
 media-sound/jamulus
