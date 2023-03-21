@@ -20,6 +20,7 @@ DEPEND=">=dev-qt/qtcore-5.5
 	dev-qt/qtopengl
 	dev-qt/qtconcurrent
 	dev-qt/qtgui
+	sci-mathematics/cgal
 	x11-libs/libdrm
 	"
 RDEPEND="${DEPEND}"
