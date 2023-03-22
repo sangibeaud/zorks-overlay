@@ -15,7 +15,7 @@ IUSE=""
 DEPEND="
 	>=media-libs/zita-alsa-pcmi-0.2.0
 	>=dev-libs/libclthreads-2.4
-	>=media-libs/libclxclient-3.9
+	>=x11-libs/libclxclient-3.9
 	media-libs/libsndfile
 	media-libs/alsa-lib
 	virtual/jack
