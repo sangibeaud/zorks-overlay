@@ -18,6 +18,7 @@ DEPEND="
 	>=x11-libs/libclxclient-3.9
 	media-libs/libsndfile
 	media-libs/alsa-lib
+	sci-libs/fftw
 	virtual/jack
 	"
 RDEPEND="${DEPEND}"
