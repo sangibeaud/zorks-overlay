@@ -68,7 +68,7 @@ jobs:
   
   emerge random ebuild:
     machine: true
-    resource_class: large
+    resource_class: xlarge
     steps:
       - checkout
       - restore_cache:
