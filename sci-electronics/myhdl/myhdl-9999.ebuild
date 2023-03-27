@@ -2,10 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=6
+EAPI=7
 
 #PYTHON_COMPAT=( python2_7 python3_4  python3_5 python3_6 )
-PYTHON_COMPAT=( python3_8 )
+PYTHON_COMPAT=( python3_{8..10} )
 inherit git-r3 distutils-r1
 
 DESCRIPTION="MyHDL is a Python package for using Python as a hardware description and verification language."
