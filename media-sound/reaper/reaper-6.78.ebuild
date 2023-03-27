@@ -23,7 +23,7 @@ SRC_URI="
 
 
 
-LICENSE=""
+LICENSE="EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~arm"
 IUSE=""
@@ -42,10 +42,6 @@ src_unpack() {
 
 }
 
-#src_prepare() {
-#	elog "nothing!"
-#}
-
 
 src_install() {
 	#Trivial install ...
@@ -55,7 +51,7 @@ src_install() {
 	mv "${S}/REAPER/libSwell.so" "${S}/REAPER/__libSwell.so"
 	doexe REAPER/reaper
 	doexe REAPER/reamote-server
-	cp  "${S}/REAPER/license.txt" "${D}usr/local/lib/reaper-${PV}/"
+	cp  "${S}/REAPER/EULA.txt" "${D}usr/local/lib/reaper-${PV}/"
 	#cp  "${S}/REAPER/tips.txt" "${D}usr/local/lib/reaper-${PV}/"
 	cp  "${S}/REAPER/whatsnew.txt" "${D}usr/local/lib/reaper-${PV}/"
 	insinto "/usr/local/lib/reaper-${PV}"
