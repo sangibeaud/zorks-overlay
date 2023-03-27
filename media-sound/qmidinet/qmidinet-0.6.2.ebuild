@@ -16,7 +16,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-qt/qtchooser
+	dev-qt/qtgui
+	dev-qt/qtwidgets
+	dev-qt/qtcore"
+
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -26,3 +31,14 @@ src_prepare(){
 	eautoreconf
 	eapply_user
 }
+
+src_compile(){
+	eqmake5 PREFIX=/usr
+	emake
+}
+
+src_install(){
+	emake install INSTALL_ROOT="${D}"
+}
+
+

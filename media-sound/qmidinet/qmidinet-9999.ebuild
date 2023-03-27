@@ -9,14 +9,19 @@ DESCRIPTION="sends and receives MIDI data (ALSA Sequencer and/or JACK MIDI) over
 HOMEPAGE="https://qmidinet.sourceforge.io/qmidinet-index.html"
 #SRC_URI=""
 EGIT_REPO_URI="https://github.com/rncbc/qmidinet.git"
-#EGIT_COMMIT="qmidinet_0_6_2"
+#EGIT_COMMIT="qmidinet_"$(ver_rs 1- _)
 
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-qt/qtchooser
+	dev-qt/qtgui
+	dev-qt/qtwidgets
+	dev-qt/qtcore"
+
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -26,3 +31,14 @@ src_prepare(){
 	eautoreconf
 	eapply_user
 }
+
+src_compile(){
+	eqmake5 PREFIX=/usr
+	emake
+}
+
+src_install(){
+	emake install INSTALL_ROOT="${D}"
+}
+
+
