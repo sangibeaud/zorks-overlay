@@ -14,9 +14,14 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
+RDEPEND="
+	dev-lang/tcl:0
+	dev-lang/tk:0
+"
+DEPEND="${RDEPEND}"
+BDEPEND="
+	virtual/pkgconfig"
+
 
 src_configure(){
 	autoupdate
