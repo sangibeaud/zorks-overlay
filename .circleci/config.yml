@@ -62,7 +62,7 @@ jobs:
           environnement:
             NOTHING_DEBUG: 1
       - save_cache:
-          key: portage-pkgdir-emerge-{{ epoch }}
+          key: portage-pkgdir-emerge-{{ .Revision }}
           paths:
             - ~/.portage-pkgdir
   
@@ -75,7 +75,7 @@ jobs:
           key: portage-pkgdir-emerge
       - run: ./tests/emerge-random-ebuild.sh
       - save_cache:
-          key: portage-pkgdir-emerge-{{ epoch }}
+          key: portage-pkgdir-emerge-{{ .Revision }}
           paths:
             - ~/.portage-pkgdir
 # Invoke jobs via workflows
