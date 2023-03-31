@@ -46,7 +46,7 @@ jobs:
           key: portage-pkgdir-emerge
       - run: ./tests/emerge-all-ebuilds.sh
       - save_cache:
-          key: portage-pkgdir-emerge-{{ epoch }}
+          key: portage-pkgdir-emerge-{{ .Revision }}
           paths:
             - ~/.portage-pkgdir
        
