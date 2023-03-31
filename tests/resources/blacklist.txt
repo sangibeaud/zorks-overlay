@@ -17,6 +17,7 @@ media-plugins/obs-
 media-plugins/lsp-plugins
 ### media-sound/
 ### media-gfx/
+media-gfx/glslViewer
 ### media-libs/
 dev-embedded/yosys/yosys-0.7
 ### x11-wm
