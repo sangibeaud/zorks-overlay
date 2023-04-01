@@ -10,7 +10,7 @@ SRC_URI=" https://dreamtonics.com/synthv/download/Synthesizer%20V%20Studio%20Bas
 
 LICENSE="EULA"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="net-libs/webkit-gtk

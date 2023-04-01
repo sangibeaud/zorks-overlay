@@ -9,7 +9,7 @@ SRC_URI="https://s3-ap-northeast-1.amazonaws.com/synthesizerv-download/synthv-ed
 
 LICENSE="EULA"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="net-libs/webkit-gtk"
