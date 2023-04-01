@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/offa/plug"
 
 LICENSE="GPL3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=" >=dev-util/cmake-3.12.0

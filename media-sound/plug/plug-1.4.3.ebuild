@@ -14,7 +14,7 @@ EGIT_COMMIT="tags/v${PV}"
 
 LICENSE="GPL3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=" >=dev-util/cmake-3.12.0
