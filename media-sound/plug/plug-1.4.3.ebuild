@@ -3,13 +3,14 @@
 
 EAPI=8
 
+#CMAKE_MAKEFILE_GENERATOR="ninja"
 
 inherit git-r3 cmake
 
 DESCRIPTION="Software for Fender Mustang Amps. This is a fork of piorekf's Plug."
 HOMEPAGE="https://github.com/offa/plug"
 EGIT_REPO_URI="https://github.com/offa/plug"
-EGIT_COMMIT="tags/v1.4.3"
+EGIT_COMMIT="tags/v${PV}"
 
 LICENSE="GPL3"
 SLOT="0"
@@ -33,14 +34,15 @@ src_prepare() {
 	sed -i "s/\/lib\/udev\/rules.d/\/etc\/udev\/rules.d/" cmake/Install.cmake
 	sed -i "s/\/lib\/share\/applications/\/usr\/share\/applications/" cmake/Install.cmake
 	#epatch "${FILESDIR}/${PN}-cmake.patch"
+	cmake_src_prepare
 	eapply_user
 }
 
-src_configure() {
-    local mycmakeargs=(
-	 -DUNITTEST=OFF
+src_configure(){
+	local mycmakeargs=(
+		-DUNITTEST=OFF
 	)
-    cmake-utils_src_configure
+	cmake_src_configure
 
 }
 
