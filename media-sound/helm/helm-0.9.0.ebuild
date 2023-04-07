@@ -2,17 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit eutils
+inherit eutils git-r3
 
 DESCRIPTION="Open source polyphonic software synthesizer with lots of modulation"
 HOMEPAGE="http://tytel.org/helm/"
 EGIT_REPO_URI="https://github.com/mtytel/helm.git"
-#EGIT_TAG="0.5.0"
+EGIT_TAG="${PV}"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="-lv2 standalone -vst"
 
 RDEPEND="media-libs/alsa-lib
 	media-libs/freetype
@@ -28,9 +28,10 @@ RDEPEND="media-libs/alsa-lib
 DEPEND="${RDEPEND}"
 
 
-#src_fetch() {
+src_fetch() {
 #	git-r3_fetch
-#}
+	egit submodule update
+}
 
 
 #src_prepare() {
@@ -42,11 +43,22 @@ DEPEND="${RDEPEND}"
 
 src_compile() {
 #	emake PREFIX=/usr all
-	make 
+	use standalone && emake standalone 
+	use lv2 && emake lv2 
+	use vst && emake vst 
 }
 
-#src_install() {
-#	default
-#	make_desktop_entry /usr/bin/helm Helm /usr/share/helm/icons/helm_icon_32_1x.png
-#}
+src_install() {
+	#default
+	#make_desktop_entry /usr/bin/helm Helm /usr/share/helm/icons/helm_icon_32_1x.png
+    if use standalone;
+	then DESTDIR=${D} emake install_standalone
+    fi
+	if use lv2;
+	then DESTDIR=${D} emake install_lv2
+	fi
+    if use vst;
+	then DESTIDIR=${D} emake install_vst
+	fi
+}
 
