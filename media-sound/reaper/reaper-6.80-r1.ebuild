@@ -54,7 +54,7 @@ src_install() {
 	#cp  "${S}/REAPER/tips.txt" "${D}usr/local/lib/reaper-${PV}/"
 	cp  "${S}/REAPER/whatsnew.txt" "${D}usr/local/lib/reaper-${PV}/"
 	insinto "/usr/local/lib/reaper-${PV}"
-    #doins -r "${S}/REAPER/"* "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
+	doins "${S}/REAPER/libSwell.so" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
     #doexe  "${S}/REAPER/"*  || die "Install failed!"
 	dosym "/usr/local/lib/reaper-${PV}" "/usr/local/lib/reaper"
 	dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
@@ -68,6 +68,7 @@ src_install() {
 	cp -r "${S}/REAPER/Plugins" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
 	cp -r "${S}/REAPER/InstallData" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
 	cp -r "${S}/REAPER/Resources" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
+
 
 	#
 	einfo < readme-linux.txt
