@@ -50,13 +50,14 @@ src_install() {
 	#mv "${S}/REAPER/libSwell.so" "${S}/REAPER/__libSwell.so"
 	doexe REAPER/reaper
 	doexe REAPER/reamote-server
+	doexe REAPER/libSwell.so
 	cp  "${S}/REAPER/EULA.txt" "${D}usr/local/lib/reaper-${PV}/"
 	#cp  "${S}/REAPER/tips.txt" "${D}usr/local/lib/reaper-${PV}/"
 	cp  "${S}/REAPER/whatsnew.txt" "${D}usr/local/lib/reaper-${PV}/"
 	insinto "/usr/local/lib/reaper-${PV}"
-	doins "${S}/REAPER/libSwell.so" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
+	#doins "${S}/REAPER/libSwell.so" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
 	dosym "/usr/local/lib/reaper-${PV}" "/usr/local/lib/reaper"
-	dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
+	#dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
 
 	#All the documentation
 	dodoc readme-linux.txt REAPER/whatsnew.txt
