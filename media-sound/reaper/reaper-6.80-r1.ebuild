@@ -32,12 +32,12 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	"
 src_unpack() {
-    if [ "${A}" != "" ]; then
+	if [ "${A}" != "" ]; then
         unpack ${A}
     fi
 
-	mv reaper_linux_x86_64/ ${PN}-${PV}/
-	
+	mv "reaper_linux_x86_64/" "${PN}-${PV}"/
+
 
 }
 
@@ -55,7 +55,6 @@ src_install() {
 	cp  "${S}/REAPER/whatsnew.txt" "${D}usr/local/lib/reaper-${PV}/"
 	insinto "/usr/local/lib/reaper-${PV}"
 	doins "${S}/REAPER/libSwell.so" "${D}usr/local/lib/reaper-${PV}/" || die "Install failed!"
-    #doexe  "${S}/REAPER/"*  || die "Install failed!"
 	dosym "/usr/local/lib/reaper-${PV}" "/usr/local/lib/reaper"
 	dosym "/usr/local/lib/libSwell.so" "/usr/local/lib/reaper-${PV}/libSwell.so"
 
