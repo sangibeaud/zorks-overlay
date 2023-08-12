@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#CMAKE_MAKEFILE_GENERATOR="ninja"
+CMAKE_MAKEFILE_GENERATOR="emake"
 
 inherit git-r3 cmake
 
