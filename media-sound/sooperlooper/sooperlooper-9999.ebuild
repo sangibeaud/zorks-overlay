@@ -1,10 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 WX_GTK_VER=3.0
 
-inherit autotools eutils flag-o-matic wxwidgets toolchain-funcs git-r3
+inherit autotools flag-o-matic toolchain-funcs git-r3
+#eutils wxwidgets
 
 DESCRIPTION="Live looping sampler with immediate loop recording"
 HOMEPAGE="http://essej.net/sooperlooper/index.html"
