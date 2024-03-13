@@ -15,7 +15,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-QA_PRESTRIPPED="/usr/bin/act"
+QA_PRESTRIPPED="/usr/bin/ghaction"
 
 src_unpack(){
 	mkdir -p ${WORKDIR}/${P}
@@ -26,7 +26,12 @@ src_unpack(){
 	fi
 }
 
+src_prepare(){
+	mv act ghaction
+	eapply_user
+}
+
 src_install(){
-	dobin act
+	dobin ghaction
 	dodoc README.md LICENSE
 }
