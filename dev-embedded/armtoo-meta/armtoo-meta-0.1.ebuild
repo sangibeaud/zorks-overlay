@@ -23,7 +23,8 @@ RDEPEND="${DEPEND}
 		sys-apps/fakeroot sys-apps/pv \
 		sys-devel/bc sys-devel/distcc \
 		sys-fs/btrfs-progs sys-fs/f2fs-tools \
-		sys-libs/ncurses sys-fs/udev 
+		sys-libs/ncurses \
+		virtual/udev
 "
 
 
