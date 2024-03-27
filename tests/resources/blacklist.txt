@@ -19,7 +19,7 @@ media-plugins/lsp-plugins
 ### media-gfx/
 media-gfx/glslViewer
 ### media-libs/
-dev-embedded/yosys/yosys-0.7
+dev-embedded/yosys/yosys-9999
 ### x11-wm
 ####
 dokuwiki
