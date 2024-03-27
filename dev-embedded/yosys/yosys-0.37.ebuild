@@ -35,7 +35,7 @@ DEPEND="
 	virtual/pkgconfig
 	${RDEPEND}"
 
-S="${WORKDIR}/${PN}-${P}"
+#S="${WORKDIR}/${PN}-${P}"
 
 src_unpack(){
 	default
