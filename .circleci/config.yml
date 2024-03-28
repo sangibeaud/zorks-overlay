@@ -58,7 +58,7 @@ jobs:
       - restore_cache:
           key: portage-pkgdir-emerge
       - run: 
-          command: ./tests/emerge-new-or-changed-ebuilds.sh
+          command: ./tests/emerge-new-or-changed-ebuilds.sh && ./tests/emerge-new-or-changed-ebuilds2.sh
           environnement:
             NOTHING_DEBUG: 1
       - save_cache:
