@@ -9,6 +9,7 @@ fi
 SCRIPT_PATH=$(dirname "$0")
 
 IFS=" " read -ra EBUILDS <<< "$("${SCRIPT_PATH}/get-new-or-changed-ebuilds.sh")"
+IFS=" " read -ra EBUILDS <<< "$("${SCRIPT_PATH}/get-new-or-changed-ebuilds2.sh")"
 
 if [ ${#EBUILDS[@]} -eq 0 ]; then
   echo "No changed ebuilds found, skipping emerge tests"
