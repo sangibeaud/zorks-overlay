@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="8"
 JAVA_PKG_IUSE="source"
 
-#inherit eutils java-pkg-2 java-ant-2 toolchain-funcs flag-o-matic fdo-mime gnome2-utils
-inherit eutils java-pkg-2 java-ant-2 toolchain-funcs flag-o-matic gnome2-utils
+#inherit eutils java-pkg-2 java-ant-2 toolchain-funcs flag-o-matic gnome2-utils
+inherit java-pkg-2 java-ant-2 toolchain-funcs flag-o-matic gnome2-utils
 
 MY_P="${P}-src"
 DESCRIPTION="TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
