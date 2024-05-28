@@ -15,6 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="dev-libs/libzip
+	media-libs/libsndfile
 	x11-libs/gtk+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
