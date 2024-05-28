@@ -16,6 +16,7 @@ KEYWORDS="~amd64"
 
 DEPEND="dev-libs/libzip
 	media-libs/libsndfile
+	media-libs/libsamplerate
 	x11-libs/gtk+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
