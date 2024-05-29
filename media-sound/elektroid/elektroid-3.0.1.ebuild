@@ -15,6 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="dev-libs/libzip
+	media-libs/alsa-lib
 	media-libs/libsndfile
 	media-libs/libsamplerate
 	x11-libs/gtk+"
