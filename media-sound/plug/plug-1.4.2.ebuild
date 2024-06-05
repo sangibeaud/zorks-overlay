@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=" >=dev-util/cmake-3.12.0
+DEPEND=" >=dev-build/cmake-3.12.0
 	dev-util/ninja
 	dev-libs/libusb
 	>=dev-qt/qtcore-5
