@@ -10,16 +10,15 @@ MY_P=libidn-${PV}
 
 DESCRIPTION="Internationalized Domain Names (IDN) implementation"
 HOMEPAGE="https://www.gnu.org/software/libidn/"
-SRC_URI="mirror://gnu/libidn/${MY_P}.tar.gz"
-
-#	verify-sig? ( mirror://gnu/libidn/${MY_P}.tar.gz.sig )"
+SRC_URI="mirror://gnu/libidn/${MY_P}.tar.gz
+	verify-sig? ( mirror://gnu/libidn/${MY_P}.tar.gz.sig )"
 
 LICENSE="GPL-2 GPL-3 LGPL-3"
 
 SLOT="11"
 
 KEYWORDS="~amd64"
-IUSE="nls -verify-sig"
+IUSE="nls"
 
 S="${WORKDIR}/libidn-1.33"
 
@@ -36,7 +35,7 @@ RDEPEND="
 "
 BDEPEND="
 	nls? ( >=sys-devel/gettext-0.17 )
-	verify-sig? ( app-crypt/openpgp-keys-libidn )
+	verify-sig? ( sec-keys/openpgp-keys-libidn )
 "
 
 src_prepare() {
