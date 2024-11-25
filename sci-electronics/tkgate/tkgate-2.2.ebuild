@@ -17,6 +17,8 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-lang/tcl:0
 	dev-lang/tk:0
+	x11-base/xorg-proto
+	x11-libs/libX11
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
