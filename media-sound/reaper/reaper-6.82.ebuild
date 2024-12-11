@@ -1,15 +1,14 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 DESCRIPTION="Reaper DAW by Cockos"
 HOMEPAGE="reaper.fm"
 
-inherit versionator
 MY_PN="reaper"
 #MY_PV=$(replace_version_separator 2 '')
-MY_PV=$(replace_all_version_separators '')
+MY_PV=$(ver_rs 1- '')
 MY_P="${MY_PN}_${MY_PV}"
 MY_P="${MY_PN}${MY_PV}"
 
