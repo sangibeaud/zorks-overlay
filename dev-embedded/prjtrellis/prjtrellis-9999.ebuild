@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT="3.10"
+PYTHON_COMPAT="3.10,3.11"
 
 CMAKE_MAKEFILE_GENERATOR="ninja"
 inherit cmake git-r3
@@ -17,7 +17,8 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="dev-libs/boost"
+DEPEND="dev-libs/boost
+	dev-lang/python"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -51,9 +52,9 @@ src_configure(){
 	einfo This ebuild FORCES use of python 3.10, bc cmake is not my cup of tea
 	einfo So you mut ensure other tools are compatible e.g. nextpnr
 	local mycmakeargs=(
-		-DPython3_EXECUTABLE=/usr/bin/python3.10
-		-DPython3_INCLUDE_DIR=/usr/include/python3.10  
-		-DPython3_LIBRARY=/usr/lib64/libpython3.10.so 
+#		-DPython3_EXECUTABLE=/usr/bin/python3.11
+#		-DPython3_INCLUDE_DIR=/usr/include/python3.11  
+#		-DPython3_LIBRARY=/usr/lib64/libpython3.11.so 
 	)
 	cmake_src_configure
 }
