@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake
+inherit cmake udev
 
 DESCRIPTION="Universal utility for programming FPGAs"
 HOMEPAGE="https://trabucayre.github.io/openFPGALoader"
@@ -44,4 +44,12 @@ src_install(){
 	cmake_src_install
 	mkdir  -p ${D}/lib/udev/rules.d/
 	cp ${S}/99-openfpgaloader.rules ${D}/lib/udev/rules.d/
+}
+
+pkg_postinst(){
+	udev_reload
+}
+
+pkg_postrm(){
+	udev_reload
 }
