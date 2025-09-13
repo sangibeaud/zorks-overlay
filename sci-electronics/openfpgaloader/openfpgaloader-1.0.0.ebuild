@@ -42,6 +42,6 @@ src_configure() {
 
 src_install(){
 	cmake_src_install
-	mkdir  -p ${D}/etc/udev/rules.d/
-	cp ${S}/99-openfpgaloader.rules ${D}/etc/udev/rules.d/
+	mkdir  -p ${D}/lib/udev/rules.d/
+	cp ${S}/99-openfpgaloader.rules ${D}/lib/udev/rules.d/
 }
