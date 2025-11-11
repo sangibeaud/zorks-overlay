@@ -17,3 +17,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+
+src_unpack(){
+	if [[ -n ${A} ]]; then
+		unpack ${A}
+	fi
+	mv ${WORKDIR}/runner ${WORKDIR}/${PN}-${PV}
+}
