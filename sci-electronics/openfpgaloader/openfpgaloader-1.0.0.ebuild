@@ -14,10 +14,10 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+cmsisdap +gpio remote static"
+IUSE="+cmsisdap gpio remote static"
 
 DEPEND="
-	dev-libs/libgpiod
+	gpio? ( dev-libs/libgpiod )
 	dev-libs/libusb
 	sys-libs/libcap
 	sys-libs/zlib
